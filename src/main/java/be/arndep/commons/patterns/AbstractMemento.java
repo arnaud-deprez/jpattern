@@ -2,6 +2,8 @@ package be.arndep.commons.patterns;
 
 /**
  * Created by Arnaud on 12-08-14.
+ * This is an helper class for the memento pattern
+ * http://www.oodesign.com/memento-pattern.html
  *
  * @param <S>
  */

@@ -4,6 +4,8 @@ import java.util.Optional;
 
 /**
  * Created by Arnaud on 12-08-14.
+ * This an helper class for the Chain of Responsibility pattern
+ * http://www.oodesign.com/chain-of-responsibility-pattern.html
  *
  * @param <E>
  */
@@ -11,7 +13,7 @@ public abstract class AbstractHandler<E> {
     private Optional<AbstractHandler> successsor;
 
     /**
-     *
+     * Set the successor if needed
      * @param successsor
      */
     public void setSuccesssor(Optional<AbstractHandler> successsor) {
@@ -19,7 +21,7 @@ public abstract class AbstractHandler<E> {
     }
 
     /**
-     *
+     * This method handle the request
      * @param request
      */
     public final void handleRequest(final E request){
@@ -31,7 +33,8 @@ public abstract class AbstractHandler<E> {
     }
 
     /**
-     * Implementation of handleRequest
+     * This is the implementation of handleRequest.
+     * This method should be overriten for each implementation.
      * @param request
      * @return
      */
