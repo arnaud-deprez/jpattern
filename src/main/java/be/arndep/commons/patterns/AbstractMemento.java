@@ -1,0 +1,26 @@
+package be.arndep.commons.patterns;
+
+/**
+ * Created by Arnaud on 12-08-14.
+ *
+ * @param <S>
+ */
+public abstract class AbstractMemento<S> {
+    private S state;
+
+    /**
+     * Constructor to keep a state
+     * @param state
+     */
+    public AbstractMemento(S state) {
+        this.state = state;
+    }
+
+    /**
+     * Get the current state
+     * @return
+     */
+    public S getState() {
+        return state;
+    }
+}
