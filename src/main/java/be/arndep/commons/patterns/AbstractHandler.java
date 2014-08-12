@@ -13,11 +13,18 @@ public abstract class AbstractHandler<E> {
     private Optional<AbstractHandler> successsor;
 
     /**
-     * Set the successor if needed
+     * Default constructor without successor
+     */
+    public AbstractHandler() {
+        successsor = Optional.empty();
+    }
+
+    /**
+     * Constructor to use with a successor
      * @param successsor
      */
-    public void setSuccesssor(Optional<AbstractHandler> successsor) {
-        this.successsor = successsor;
+    public AbstractHandler(final AbstractHandler successsor) {
+        this.successsor = Optional.of(successsor);
     }
 
     /**
@@ -25,8 +32,8 @@ public abstract class AbstractHandler<E> {
      * @param request
      */
     public final void handleRequest(final E request){
+       final  boolean handleByThisNode = this.handleRequestImpl(request);
         successsor.ifPresent(s -> {
-            boolean handleByThisNode = this.handleRequestImpl(request);
             if (!handleByThisNode)
                 s.handleRequest(request);
         });

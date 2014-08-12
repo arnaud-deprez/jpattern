@@ -14,7 +14,7 @@ public abstract class AbstractMemento<S> {
      * Constructor to keep a state
      * @param state
      */
-    public AbstractMemento(S state) {
+    public AbstractMemento(final S state) {
         this.state = state;
     }
 
