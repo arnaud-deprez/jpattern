@@ -25,10 +25,10 @@ public abstract class AbstractHandler<E> {
      * @param request
      */
     public final void handleRequest(final E request){
-        successsor.ifPresent(c -> {
+        successsor.ifPresent(s -> {
             boolean handleByThisNode = this.handleRequestImpl(request);
             if (!handleByThisNode)
-                c.handleRequest(request);
+                s.handleRequest(request);
         });
     }
 
