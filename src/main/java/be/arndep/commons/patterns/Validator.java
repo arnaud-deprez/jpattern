@@ -2,7 +2,7 @@ package be.arndep.commons.patterns;
 
 /**
  * Created by Arnaud on 12-08-14.
- * This interface is an helper interface to represent a validation strategy
+ * This is an helper interface to represent a validation strategy
  *
  * @param <R>
  * @param <E>

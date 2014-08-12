@@ -4,7 +4,7 @@ import java.util.Optional;
 
 /**
  * Created by Arnaud on 12-08-14.
- * This an helper class for the Chain of Responsibility pattern
+ * This is an helper class for the Chain of Responsibility pattern
  * http://www.oodesign.com/chain-of-responsibility-pattern.html
  *
  * @param <E>

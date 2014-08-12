@@ -2,7 +2,7 @@ package be.arndep.commons.patterns;
 
 /**
  * Created by Arnaud on 12-08-14.
- * This an Helper interface for the Builder pattern
+ * This is an Helper interface for the Builder pattern
  * http://www.oodesign.com/builder-pattern.html
  *
  * @param <R> The result
