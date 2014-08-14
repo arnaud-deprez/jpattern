@@ -10,7 +10,7 @@ import java.util.Optional;
  * @param <E>
  */
 public abstract class AbstractHandlerChain<E> {
-    private Optional<AbstractHandlerChain> successsor;
+    private Optional<AbstractHandlerChain<E>> successsor;
 
     /**
      * Default constructor without successor
@@ -19,13 +19,15 @@ public abstract class AbstractHandlerChain<E> {
         successsor = Optional.empty();
     }
 
-    /**
-     * Constructor to use with a successor
-     * @param successsor
-     */
-    public AbstractHandlerChain(final AbstractHandlerChain successsor) {
-        this.successsor = Optional.of(successsor);
-    }
+	/**
+	 * Configure the successor
+	 * @param successor
+	 * @return
+	 */
+	public AbstractHandlerChain<E> setSuccessor(final AbstractHandlerChain<E> successor) {
+		this.successsor = Optional.of(successor);
+		return this.successsor.get();
+	}
 
     /**
      * This public method handle the given element
