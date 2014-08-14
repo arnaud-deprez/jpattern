@@ -9,13 +9,13 @@ import java.util.Optional;
  *
  * @param <E>
  */
-public abstract class AbstractHandler<E> {
-    private Optional<AbstractHandler> successsor;
+public abstract class AbstractHandlerChain<E> {
+    private Optional<AbstractHandlerChain> successsor;
 
     /**
      * Default constructor without successor
      */
-    public AbstractHandler() {
+    public AbstractHandlerChain() {
         successsor = Optional.empty();
     }
 
@@ -23,27 +23,27 @@ public abstract class AbstractHandler<E> {
      * Constructor to use with a successor
      * @param successsor
      */
-    public AbstractHandler(final AbstractHandler successsor) {
+    public AbstractHandlerChain(final AbstractHandlerChain successsor) {
         this.successsor = Optional.of(successsor);
     }
 
     /**
-     * This method handle the request
-     * @param request
+     * This public method handle the given element
+     * @param element
      */
-    public final void handleRequest(final E request){
-       final  boolean handleByThisNode = this.handleRequestImpl(request);
+    public final void handle(final E element){
+       final  boolean handleByThisNode = this.handleImpl(element);
         successsor.ifPresent(s -> {
             if (!handleByThisNode)
-                s.handleRequest(request);
+                s.handle(element);
         });
     }
 
     /**
-     * This is the implementation of handleRequest.
+     * This is the implementation of handle.
      * This method should be overriten for each implementation.
      * @param request
-     * @return
+     * @return true to break the chain, false otherwise
      */
-    protected abstract boolean handleRequestImpl(E request);
+    protected abstract boolean handleImpl(final E request);
 }
