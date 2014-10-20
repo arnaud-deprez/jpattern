@@ -6,13 +6,11 @@ package be.arndep.commons.patterns;
  * http://www.oodesign.com/builder-pattern.html
  *
  * @param <R> The result
- * @param <T> The exception thrown
  */
-public interface Builder<R, T extends Throwable> {
+public interface Builder<R> {
     /**
      * This method is used to build the result
      * @return
-     * @throws T
      */
-    R build() throws T;
+    R build();
 }

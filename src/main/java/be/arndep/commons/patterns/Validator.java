@@ -6,14 +6,12 @@ package be.arndep.commons.patterns;
  *
  * @param <R>
  * @param <E>
- * @param <T>
  */
-public interface Validator<R, E, T extends Throwable> {
+public interface Validator<R, E> {
     /**
      * Validate the element
      * @param element
      * @return The result of the validation
-     * @throws T
      */
-    R validate(E element) throws T;
+    R validate(E element);
 }
