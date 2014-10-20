@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class AbstractHandlerTest {
+public class AbstractHandlerChainTest {
     private static enum KindNumber {
         ZERO,
         NEGATIVE,
