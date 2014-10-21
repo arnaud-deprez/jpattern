@@ -17,7 +17,7 @@ public abstract class AbstractSpecification<T> implements Specification<T> {
      */
     @Override
     public Specification<T> and(final Specification<T> specification) {
-        return new AndSpecification<T>(this, specification);
+        return new AndSpecification<>(this, specification);
     }
 
     /**
