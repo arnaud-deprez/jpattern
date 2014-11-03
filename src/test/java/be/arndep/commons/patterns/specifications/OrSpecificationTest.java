@@ -3,11 +3,14 @@ package be.arndep.commons.patterns.specifications;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.function.Predicate;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class OrSpecificationTest {
-    private Specification<Object> allwaysTrue;
-    private Specification<Object> allwaysFalse;
+    private Predicate<Object> allwaysTrue;
+    private Predicate<Object> allwaysFalse;
 
     @Before
     public void setUp() {
@@ -16,25 +19,10 @@ public class OrSpecificationTest {
     }
 
     @Test
-    public void testIsSatisfiedBy() throws Exception {
-        OrSpecification<Object> orSpecification = new OrSpecification<>(allwaysTrue, allwaysTrue);
-        assertTrue(orSpecification.isSatisfiedBy(new Object()));
-
-        orSpecification = new OrSpecification<>(allwaysTrue, allwaysFalse);
-        assertTrue(orSpecification.isSatisfiedBy(new Object()));
-
-        orSpecification = new OrSpecification<>(allwaysFalse, allwaysTrue);
-        assertTrue(orSpecification.isSatisfiedBy(new Object()));
-
-        orSpecification = new OrSpecification<>(allwaysFalse, allwaysFalse);
-        assertFalse(orSpecification.isSatisfiedBy(new Object()));
-    }
-
-    @Test
     public void testChaining() {
-        assertTrue(allwaysTrue.or(allwaysTrue).isSatisfiedBy(new Object()));
-        assertTrue(allwaysTrue.or(allwaysFalse).isSatisfiedBy(new Object()));
-        assertTrue(allwaysFalse.or(allwaysTrue).isSatisfiedBy(new Object()));
-        assertFalse(allwaysFalse.or(allwaysFalse).isSatisfiedBy(new Object()));
+        assertTrue(allwaysTrue.or(allwaysTrue).test(new Object()));
+        assertTrue(allwaysTrue.or(allwaysFalse).test(new Object()));
+        assertTrue(allwaysFalse.or(allwaysTrue).test(new Object()));
+        assertFalse(allwaysFalse.or(allwaysFalse).test(new Object()));
     }
 }
