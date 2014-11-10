@@ -9,6 +9,6 @@ import be.arndep.commons.patterns.Validator;
  *
  * @param <E>
  */
-public interface BooleanValidator<E> extends Validator<Boolean, E, RuntimeException>
+public interface BooleanValidator<E> extends Validator<Boolean, E>
 {
 }
