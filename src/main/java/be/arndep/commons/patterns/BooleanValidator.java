@@ -1,4 +1,4 @@
-package be.arndep.commons.patterns.helpers;
+package be.arndep.commons.patterns;
 
 import be.arndep.commons.patterns.Validator;
 

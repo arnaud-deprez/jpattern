@@ -7,10 +7,5 @@ package be.arndep.commons.patterns;
  * @param <R>
  * @param <B>
  */
-public abstract class AbstractGenericBuilder<R, B extends AbstractGenericBuilder<R, B>> implements Builder<R> {
-    /**
-     * Method helper to return the actual builder
-     * @return
-     */
-    protected abstract B self();
+public abstract class AbstractGenericBuilder<R, B extends Builder<R>> extends AbstractGenericThrowableBuilder<R, B, RuntimeException> {
 }
