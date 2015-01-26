@@ -5,5 +5,6 @@ package be.arndep.commons.patterns;
  *
  * {@inheritDoc}
  */
-public interface Interpreter<R, E> extends ThrowableInterpreter<R, E, RuntimeException> {
+@FunctionalInterface
+public interface Interpreter<E, R> extends ThrowableInterpreter<E, R, RuntimeException> {
 }

@@ -8,7 +8,8 @@ package be.arndep.commons.patterns;
  * @param <E>
  * @param <T>
  */
-public interface ThrowableStrategy<R, E, T extends Throwable> {
+@FunctionalInterface
+public interface ThrowableStrategy<E, R, T extends Throwable> {
     /**
      * Execute the current strategy
      * @param element

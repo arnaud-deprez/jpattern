@@ -1,7 +1,5 @@
 package be.arndep.commons.patterns;
 
-import be.arndep.commons.patterns.Validator;
-
 /**
  * Created by Arnaud on 12-08-14.
  * This is an helper interface to represent classical validation strategy
@@ -9,6 +7,7 @@ import be.arndep.commons.patterns.Validator;
  *
  * @param <E>
  */
-public interface BooleanValidator<E> extends Validator<Boolean, E>
+@FunctionalInterface
+public interface BooleanValidator<E> extends Validator<E, Boolean>
 {
 }

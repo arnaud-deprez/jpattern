@@ -5,5 +5,6 @@ package be.arndep.commons.patterns;
  *
  * {@inheritDoc}
  */
-public interface Validator<R, E> extends ThrowableValidator<R, E, RuntimeException> {
+@FunctionalInterface
+public interface Validator<E, R> extends ThrowableValidator<E, R, RuntimeException> {
 }

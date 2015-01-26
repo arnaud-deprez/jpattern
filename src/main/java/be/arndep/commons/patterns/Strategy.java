@@ -5,5 +5,7 @@ package be.arndep.commons.patterns;
  *
  * {@inheritDoc}
  */
-public interface Strategy<R, E> extends ThrowableStrategy<R, E, RuntimeException> {
+@FunctionalInterface
+public interface Strategy<E, R> extends ThrowableStrategy<E, R, RuntimeException> {
+	
 }

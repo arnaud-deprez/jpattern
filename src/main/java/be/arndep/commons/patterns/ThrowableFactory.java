@@ -12,11 +12,12 @@ package be.arndep.commons.patterns;
  * @param <R> The result
  * @param <T> The exception
  */
-public interface ThrowableFactory<R, E, T extends Throwable> {
+@FunctionalInterface
+public interface ThrowableFactory<E, R, T extends Throwable> {
     /**
      * This method is used to create the desired Object
      * @param element
      * @return
      */
-    R create(E element);
+    R create(E element) throws T;
 }

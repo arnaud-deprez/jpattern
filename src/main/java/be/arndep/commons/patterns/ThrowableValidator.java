@@ -8,7 +8,8 @@ package be.arndep.commons.patterns;
  * @param <E>
  * @param <T>
  */
-public interface ThrowableValidator<R, E, T extends Throwable> {
+@FunctionalInterface
+public interface ThrowableValidator<E, R, T extends Throwable> {
     /**
      * Validate the element
      * @param element

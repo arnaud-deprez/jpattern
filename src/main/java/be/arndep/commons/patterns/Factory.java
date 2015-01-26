@@ -5,5 +5,6 @@ package be.arndep.commons.patterns;
  *
  * {@inheritDoc}
  */
-public interface Factory<R, E> extends ThrowableFactory<R, E, RuntimeException> {
+@FunctionalInterface
+public interface Factory<E, R> extends ThrowableFactory<E, R, RuntimeException> {
 }
