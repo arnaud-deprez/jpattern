@@ -14,8 +14,8 @@ public class AndSpecificationTest {
 
     @Before
     public void setUp() {
-        allwaysTrue = new AllwaysTrueSpecification<>();
-        allwaysFalse = new AllwaysFalseSpecification<>();
+        allwaysTrue = (Object o) -> true;
+        allwaysFalse = (Object o) -> false;
     }
 
     @Test
